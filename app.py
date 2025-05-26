@@ -6,9 +6,9 @@ import os, io, boto3, torch
 
 s3 = boto3.client(
     's3',
-    endpoint_url=os.getenv("https://storage.c2.liara.space"),
-    aws_access_key_id=os.getenv("7c5kqlsc3914si9c"),
-    aws_secret_access_key=os.getenv("014cc8cc-8933-4314-9e10-b34dc75f2637"),
+    endpoint_url="https://storage.c2.liara.space",
+    aws_access_key_id="7c5kqlsc3914si9c",
+    aws_secret_access_key="014cc8cc-8933-4314-9e10-b34dc75f2637"
 )
 def fetch_pt(key):
     resp = s3.get_object(Bucket="flask-bucket-recommend", Key=key)
